@@ -1,0 +1,24 @@
+html {
+    background-color: lightgray;
+}
+
+#clockDiv {
+    white-space: nowrap; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
+    font-size: large;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.activeTimer{
+    list-style: none;
+    font-weight: bolder;
+    border:2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
