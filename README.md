@@ -1,4 +1,4 @@
-# Mindfulness_Timer
+# Mindfulness Timer
 
 ## Team Members
 Christopher Tang, Tanveer Singh, Anna Tzeng, Himanshu Gediya, Isabelle Thomas
