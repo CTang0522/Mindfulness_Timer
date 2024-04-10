@@ -10,7 +10,7 @@ This project was made as an entry in Kappa Theta Pi's internal hackathon. The pu
 The best/easiest way to visualize this project is through Visual Studio Code. Through this software you can install the "Live Server" extension allowing you to use a secondary click on the index.html file and click the option "open with live server". This will create a new tab in your browser to allow you to open the project.
 
 ## Necessary Imports
-Python Libraries:
+### Python Libraries:
 - JS
 - datetime
 - time
