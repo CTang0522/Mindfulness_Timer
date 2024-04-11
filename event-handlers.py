@@ -1,3 +1,6 @@
+#This file will hold all python scripts run within the javascript section of the HTML Document
+#In order to run this python code, we utilized the "py-script" library to defer scripting to a python file
+
 #Necessary Imports
 import js
 from datetime import datetime
@@ -50,6 +53,8 @@ def enterEvent():
     #Checking that necessary fields are filled in
     if name=="":
         js.alert("Enter an Event Name")
+    elif (":" in name):
+        js.alert("Please Do Not Use the ':' Character in Event Names")
     elif (hours==0 and minutes==0):
         js.alert("You Have Not Entered Estimated Duration of Event")
     elif (startTime==""):
@@ -72,10 +77,7 @@ def enterEvent():
             js.document.getElementById('eventStartTime').value = ""
             js.document.getElementById('eventNotes').value = ""
         
-            #Add Event to the List on Main Screen
-            #listOfToday = js.document.getElementById('listOfEvents')
-            #listOfToday.innerHTML += ("<li id='listElem"+x.name+"' onclick=\"removeElem(\'listElem"+x.name+"\')\">"+x.name+', '+str(x.hours)+' Hours '+str(x.minutes)+' Minutes, Start Time: '+ x.start +'</li>')
-
+        
             js.addEventToList(name,hours,minutes,startTime,notes)
         
 

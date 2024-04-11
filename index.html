@@ -105,6 +105,8 @@
 
             })
 
+            //Checks if the Next Event Starting Time Has Passed
+            //If it Has, Removes The Event from the All Events List and Creates a new Timer
             function checkTimes(){
                 if (allEvents.length > 0) {
                     let first = allEvents[0];
@@ -117,7 +119,7 @@
                     if (hour < currHour || (hour === currHour && min <= currMin)) {
                         alert("Time For You To: " + first[0] + "\nNotes: "+first[4])
                         removeElemNoAlert("listElem"+first[0])
-                        document.getElementById('activeTimers').innerHTML += "<li class='activeTimer'>"+first[0]+": "+first[1]+":"+first[2]+":00</li>"
+                        document.getElementById('activeTimers').innerHTML += "<li class='activeTimer'>"+first[0]+": "+first[1]+":"+first[2]+":00</li><br>"
                     }
                     
 
@@ -125,6 +127,7 @@
                 
             }
 
+            //Counts Down Each Timer
             function adjustTimers() {
                 let timerList = document.getElementById("activeTimers").querySelectorAll("li")
                 if(timerList.length>0){
@@ -196,6 +199,7 @@
 
             }
 
+            //Custom Sorting Function to Allow Us to Sort the List of All Events for the Day by Starting Hour and Minute
             function sortFunction(a,b){
                 let aHours = parseInt(a[3].split(":")[0])
                 let aMin = parseInt(a[3].split(":")[1])
