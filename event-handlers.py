@@ -39,6 +39,12 @@ def startNewDay():
     else:
         xelem.style.visibility="visible"
 
+def clearForm():
+    js.document.getElementById('eventName').value = ""
+    js.document.getElementById('eventHours').value = 0
+    js.document.getElementById('eventMinutes').value = 0
+    js.document.getElementById('eventStartTime').value = ""
+    js.document.getElementById('eventNotes').value = ""
 
 def enterEvent():
     #Takes Values from Form Entering Data
@@ -71,13 +77,9 @@ def enterEvent():
             x = Event(name,hours,minutes,startTime,notes)
             
             #Clears the Form Fields
-            js.document.getElementById('eventName').value = ""
-            js.document.getElementById('eventHours').value = 0
-            js.document.getElementById('eventMinutes').value = 0
-            js.document.getElementById('eventStartTime').value = ""
-            js.document.getElementById('eventNotes').value = ""
+            clearForm()
         
-        
+
             js.addEventToList(name,hours,minutes,startTime,notes)
         
 

@@ -26,12 +26,24 @@ textarea {
 
 #enterEvent {
     background-color: #E8A87C;
+    height: 35px;
     border-radius: 10px;
 }
 
 #enterEvent:hover {
     transform: scale(0.9);
     color: blue;
+}
+
+#clearForm {
+    background-color: #E8A87C;
+    height: 35px;
+    border-radius: 10px;
+}
+
+#clearForm:hover {
+    transform: scale(0.9);
+    color: red;
 }
 
 .activeTimer{

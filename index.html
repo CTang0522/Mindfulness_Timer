@@ -25,15 +25,15 @@
 
             <hr>
             <div id="enteringEvents">
-                <label>Event:</label> &nbsp; <input type="text" id="eventName">
+                <label for="eventName">Event:</label> &nbsp; <input type="text" id="eventName">
                 <br>
-                <label>Estimated Time For Event:</label> &nbsp; <input type="number" max="24" min="0" value="0" id="eventHours"> hours <input type="number" max="60" min="0" value="0" id="eventMinutes"> minutes
+                <label for="eventHours">Estimated Time For Event:</label> &nbsp; <input type="number" max="24" min="0" value="0" id="eventHours"> hours <input type="number" max="60" min="0" value="0" id="eventMinutes"> minutes
                 <br>
-                <label>Start Time:</label> &nbsp; <input type="time" id="eventStartTime">
+                <label for="eventStartTime">Start Time:</label> &nbsp; <input type="time" id="eventStartTime">
                 <br>
-                <label>Notes/Specific Goals:</label><br><textarea id="eventNotes" style="width:100%;height: 100px;"></textarea>
+                <label for="eventNotes">Notes/Specific Goals:</label><br><textarea id="eventNotes" style="width:100%;height: 100px;"></textarea>
                 <br>
-                <div style="text-align: center;"><button id="enterEvent" py-click="enterEvent()" style="height: 35px;">Submit</button></div>
+                <div style="text-align: center;"><button id="enterEvent" py-click="enterEvent()" style="height: 35px;">Submit</button>&nbsp;<button id="clearForm" py-click="clearForm()">Clear</button></div>
             </div>
 
             <div>
