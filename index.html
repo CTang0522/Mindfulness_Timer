@@ -11,7 +11,8 @@
 
     <body>
         <div id="starter" style="text-align: center;">
-            <button id="starterButton" py-click="startNewDay()" >Start A Brand New Day</button>
+            <img src="./assets/sun.jpg" style="height: 120px;" id="sunPic" py-click="startNewDay()"><br>
+            <div id="bottomCenter" py-click="startNewDay()">Click to Start a New Day</div>
         </div>
 
         <br>
@@ -32,7 +33,7 @@
                 <br>
                 <label>Notes/Specific Goals:</label><br><textarea id="eventNotes" style="width:100%;height: 100px;"></textarea>
                 <br>
-                <button id="enterEvent" py-click="enterEvent()">BUTTON</button>
+                <div style="text-align: center;"><button id="enterEvent" py-click="enterEvent()" style="height: 35px;">Submit</button></div>
             </div>
 
             <div>
@@ -45,7 +46,6 @@
             
             
             <ul id="listOfEvents">
-                <li id='listElemStudy' onclick="removeElem('listElemStudy')">Study, 1 Hours 0 Minutes, 00:00, None</li>
             </ul>
 
 
@@ -119,12 +119,21 @@
                     if (hour < currHour || (hour === currHour && min <= currMin)) {
                         alert("Time For You To: " + first[0] + "\nNotes: "+first[4])
                         removeElemNoAlert("listElem"+first[0])
-                        document.getElementById('activeTimers').innerHTML += "<li class='activeTimer'>"+first[0]+": "+first[1]+":"+first[2]+":00</li><br>"
+                        document.getElementById('activeTimers').innerHTML += "<li class='activeTimer' onclick='cancelTimer("+first[0]+")'>"+first[0]+": "+first[1]+":"+first[2]+":00</li><br>"
                     }
                     
 
                 }
                 
+            }
+
+            function cancelTimer(name){
+                let timerList = document.getElementById("activeTimers").querySelectorAll("li")
+                if (timerList.length > 0){
+                    timerList.forEach(ele => {
+
+                    })
+                }
             }
 
             //Counts Down Each Timer
@@ -193,7 +202,7 @@
                     let min = element[2]
                     let start = element[3]
                     let notes = element[4]
-                    document.getElementById('listOfEvents').innerHTML += ("<li id='listElem"+name+"' onclick=\"removeElem(\'listElem"+name+"\')\">"+name+", "+hours+" Hours "+min+" Minutes, Start Time: "+start+" Notes: "+ notes +"</li>")
+                    document.getElementById('listOfEvents').innerHTML += ("<li class='listOfEventsItem' id='listElem"+name+"' onclick=\"removeElem(\'listElem"+name+"\')\">&nbsp;"+name+", "+hours+" Hours "+min+" Minutes, Start Time: "+start+" Notes: "+ notes +"&nbsp;</li>")
                 }
                 
 

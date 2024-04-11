@@ -1,5 +1,16 @@
 html {
-    background-color: lightgray;
+    background-color: #85dcb8;
+    font-family: "Times New Roman";
+}
+
+input {
+    background-color: #E8A87C;
+    border-radius: 5px;
+}
+
+textarea {
+    background-color: #E8A87C;
+    border-radius: 5px;
 }
 
 #clockDiv {
@@ -13,6 +24,16 @@ html {
     border-radius: 10px;
 }
 
+#enterEvent {
+    background-color: #E8A87C;
+    border-radius: 10px;
+}
+
+#enterEvent:hover {
+    transform: scale(0.9);
+    color: blue;
+}
+
 .activeTimer{
     list-style: none;
     font-weight: bolder;
@@ -21,4 +42,46 @@ html {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.activeTimer:hover {
+    color: red;
+    transform: scale(.9);
+}
+
+.listOfEventsItem {
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listOfEventsItem:hover {
+    color:red;
+    transform:scale(0.9);
+
+}
+
+#sunPic {
+    border-radius: 10px;
+}
+
+
+
+#starter {
+    position:relative;
+    text-align:center;
+}
+
+#starter:hover {
+    transform: scale(.9);
+}
+
+#bottomCenter{
+    position:absolute;
+    left:50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
 }
