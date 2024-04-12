@@ -64,7 +64,7 @@ function checkTimes(){
         if (hour < currHour || (hour === currHour && min <= currMin)) {
             alert("Time For You To: " + first[0] + "\nNotes: "+first[4])
             removeElemNoAlert("listElem"+first[0])
-            document.getElementById('activeTimers').innerHTML += "<li class='activeTimer' onclick='cancelTimer("+first[0]+")'>"+first[0]+": "+first[1]+":"+first[2]+":00</li><br>"
+            document.getElementById('activeTimers').innerHTML += "<li class='activeTimer' onclick='cancelTimer(\""+first[0]+"\")'>"+first[0]+": "+first[1]+":"+first[2]+":00</li><br>"
         }
         
 
@@ -76,7 +76,11 @@ function cancelTimer(name){
     let timerList = document.getElementById("activeTimers").querySelectorAll("li")
     if (timerList.length > 0){
         timerList.forEach(ele => {
-
+            if (ele.innerHTML.split(":")[0] === name) {
+                if (window.confirm("Are Your Sure You Want To Cancel Timer: "+name)) {
+                    ele.parentNode.removeChild(ele)
+                }
+            }
         })
     }
 }
@@ -147,7 +151,7 @@ function addEventToList(name, hours, minutes, startTime, notes){
         let min = element[2]
         let start = element[3]
         let notes = element[4]
-        document.getElementById('listOfEvents').innerHTML += ("<li class='listOfEventsItem' id='listElem"+name+"' onclick=\"removeElem(\'listElem"+name+"\')\">&nbsp;"+name+", "+hours+" Hours "+min+" Minutes, Start Time: "+start+" Notes: "+ notes +"&nbsp;</li>")
+        document.getElementById('listOfEvents').innerHTML += ("<li class='listOfEventsItem' id='listElem"+name+"' onclick=\"removeElem(\'listElem"+name+"\')\">"+name+", "+hours+" Hours "+min+" Minutes, Start Time: "+start+" Notes: "+ notes +"</li>")
     }
     
 
